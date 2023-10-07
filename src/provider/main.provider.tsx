@@ -27,14 +27,14 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
   const [agents, setAgents] = useState<iAgent[] | []>([]);
   const [weapons, setWeapons] = useState<iWeapon[] | []>([]);
   const [maps, setMaps] = useState<iMap[] | []>([]);
-  const [buddies, setBuddies] = useState();
-  const [tiers, setTiers] = useState();
+/*   const [buddies, setBuddies] = useState();
+  const [tiers, setTiers] = useState(); */
   const [events, setEvents] = useState<iEvent[] | []>([]);
-  const [cards, setCards] = useState();
+/*   const [cards, setCards] = useState();
   const [titles, setTitles] = useState();
   const [seasons, setSeasons] = useState();
   const [sprays, setSprays] = useState();
-
+ */
   useEffect(() => {}, []);
 
   const getAgents = async () => {
