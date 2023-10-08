@@ -6,7 +6,6 @@ import {
   WelcomeComponentStyle,
 } from "./welcome.style";
 import astra from "../../assets/Astra_Artwork_Full.webp";
-import kayo from "../../assets/KAYO_Artwork_Full.webp";
 import fenix from "../../assets/V_AGENTS_587x900_Phx.png"
 
 export const WelcomeComponent = () => {
@@ -15,7 +14,7 @@ export const WelcomeComponent = () => {
       <ContainerTop>
         <WelcomeComponentStyle>
           <div>
-            <h4>Olá, Jogador.</h4>
+            <h4>Olá, Jogador</h4>
             <h5>Bem vindo ao </h5>
             <div id="div">
               <img src={valorantLogo} alt="" />

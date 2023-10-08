@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 import { iAgent } from "./types/@agent-types";
 import { iWeapon } from "./types/@weapon-types";
 import { iMap } from "./types/@maps-types";
-import { iEvent } from "./types/@event-types";
 import { iTier, iTiers } from "./types/@tier-types";
 
 interface iMainProviderProps {

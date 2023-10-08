@@ -3,7 +3,7 @@ import { Footer } from "../../components/footer/footer.index";
 import { Header } from "../../components/header";
 import { WelcomeComponent } from "../../components/welcome/welcome.component";
 import { GoToTopButtonStyle, MainStyle } from "../agents/style";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 
 export const HomePage = () => {
   useEffect(() => {}, []);

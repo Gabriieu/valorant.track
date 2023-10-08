@@ -7,7 +7,7 @@ interface iTierProp {
 export const TierCard = ({tier}: iTierProp) => {
     return (
         <TierStyled>
-            
+            <h1>{tier.uuid}</h1>
         </TierStyled>
     )
 }
