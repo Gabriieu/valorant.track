@@ -5,6 +5,7 @@ import { iAgent } from "./types/@agent-types";
 import { iWeapon } from "./types/@weapon-types";
 import { iMap } from "./types/@maps-types";
 import { iEvent } from "./types/@event-types";
+import { iTier, iTiers } from "./types/@tier-types";
 
 interface iMainProviderProps {
   children: React.ReactNode;
@@ -17,8 +18,8 @@ interface iMainContext {
   getWeapons: () => Promise<void>;
   maps: [] | iMap[];
   getMaps: () => Promise<void>;
-  events: [] | iEvent[];
-  getEvents: () => Promise<void>;
+  tiers: [] | iTiers[];
+  getTiers: () => Promise<void>;
 }
 
 export const MainContext = createContext({} as iMainContext);
@@ -27,12 +28,10 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
   const [agents, setAgents] = useState<iAgent[] | []>([]);
   const [weapons, setWeapons] = useState<iWeapon[] | []>([]);
   const [maps, setMaps] = useState<iMap[] | []>([]);
-/*   const [buddies, setBuddies] = useState();
-  const [tiers, setTiers] = useState(); */
-  const [events, setEvents] = useState<iEvent[] | []>([]);
-/*   const [cards, setCards] = useState();
+  /* const [buddies, setBuddies] = useState(); */
+  const [tiers, setTiers] = useState<iTiers[] | []>([]);
+  /*   const [cards, setCards] = useState();
   const [titles, setTitles] = useState();
-  const [seasons, setSeasons] = useState();
   const [sprays, setSprays] = useState();
  */
   useEffect(() => {}, []);
@@ -41,11 +40,10 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
     if (agents.length == 0) {
       try {
         const response = await api.get("/agents?language=pt-BR");
-        const removeSova09 = response.data.data.filter(
-          (agent: iAgent) =>
-            agent.uuid !== "ded3520f-4264-bfed-162d-b080e2abccf9"
+        const removeSova = response.data.data.filter(
+          (agent: iAgent) => agent.isPlayableCharacter
         );
-        setAgents(removeSova09);
+        setAgents(removeSova);
       } catch (error) {
         toast.error("Houve um erro inesperado ao obter os agentes.");
       }
@@ -74,19 +72,21 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
     }
   };
 
-  const getEvents = async () => {
-    if (events.length == 0) {
+  const getTiers = async () => {
+    if (tiers.length == 0) {
       try {
-        const response = await api.get("/events");
-        setEvents(response.data.data);
+        const response = await api.get("/competitivetiers?language=pt-BR");
+        const filterResponse = response.data.data[0].tiers.filter((tier: iTier) => tier.smallIcon)
+        setTiers(filterResponse);
       } catch (error) {
-        toast.error("Houve um erro inesperador ao obter os eventos.");
+        toast.error("Houve um erro ao obter os ranks.");
       }
     }
+    console.log(tiers)
   };
   return (
     <MainContext.Provider
-      value={{ agents, getAgents, weapons, getWeapons, maps, getMaps, events, getEvents }}
+      value={{ agents, getAgents, weapons, getWeapons, maps, getMaps, tiers, getTiers }}
     >
       {children}
     </MainContext.Provider>

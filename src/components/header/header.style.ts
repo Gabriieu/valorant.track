@@ -5,13 +5,14 @@ export const HeaderStyle = styled.header`
   top: 0;
   z-index: 2;
   width: 100vw;
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 8px;
   background-color: var(--red-1);
+  padding: 0 24px 0 24px;
 `;
 
 export const LogoStyle = styled.img`
@@ -22,7 +23,7 @@ export const LogoStyle = styled.img`
 
 export const DropDownMenu = styled.div`
   position: fixed;
-  top: 100px;
+  top: 80px;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);

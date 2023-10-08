@@ -35,16 +35,15 @@ export const Header = () => {
         !hambMenuStatus ? (
             <DropDownMenu>
                 <ul>
-                    <li onClick={() => navigate("/agents")}><a href="">Agentes</a></li>
-                    <li onClick={() => navigate("/weapons")}><a href="">Armas</a></li>
-                    <li onClick={() => navigate("/maps")}><a href="">Mapas</a></li>
-                    <li onClick={() => navigate("/buddies")}><a href="">Chaveiros</a></li>
-                    <li onClick={() => navigate("/tiers")}><a href="">Tiers</a></li>
-                    <li onClick={() => navigate("/events")}><a href="">Eventos</a></li>
-                    <li onClick={() => navigate("/cards")}><a href="">Cards</a></li>
-                    <li onClick={() => navigate("/titles")}><a href="">Títulos</a></li>
-                    <li onClick={() => navigate("/seasons")}><a href="">Seasons</a></li>
-                    <li onClick={() => navigate("/sprays")}><a href="">Sprays</a></li>
+                    <li onClick={() => navigate("/")}><a href="">HOME</a></li>
+                    <li onClick={() => navigate("/agents")}><a href="">AGENTES</a></li>
+                    <li onClick={() => navigate("/weapons")}><a href="">ARMAS</a></li>
+                    <li onClick={() => navigate("/maps")}><a href="">MAPAS</a></li>
+                    <li onClick={() => navigate("/buddies")}><a href="">CHAVEIROS</a></li>
+                    <li onClick={() => navigate("/tiers")}><a href="">TIERS</a></li>
+                    <li onClick={() => navigate("/cards")}><a href="">CARDS</a></li>
+                    <li onClick={() => navigate("/titles")}><a href="">TÍTULOS</a></li>
+                    <li onClick={() => navigate("/sprays")}><a href="">SPRAYS</a></li>
                 </ul>
             </DropDownMenu>
         ) : (null)
