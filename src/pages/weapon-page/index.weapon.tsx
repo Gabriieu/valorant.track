@@ -21,7 +21,7 @@ export const WeaponInfoPage = () => {
 
       setWeaponInfo(response.data.data);
     } catch (error) {
-      toast.error("Houve um erro inesperado ao obter a arma.");
+      toast.error("Arma não encontrada");
     }
   };
 

@@ -5,6 +5,8 @@ import { MapsPage } from "../pages/maps/index.maps"
 import { HomePage } from "../pages/home/index.home"
 import { AgentInfoPage } from "../pages/agent-page/index.agent"
 import { WeaponInfoPage } from "../pages/weapon-page/index.weapon"
+import { TiersPage } from "../pages/tiers/index.tiers"
+import { Page404 } from "../pages/404/index.404"
 
 export const RoutesMain = () => {
     return (
@@ -15,6 +17,8 @@ export const RoutesMain = () => {
             <Route path="/weapons" element={<WeaponsPage/>}/>
             <Route path="/weapons/:weaponId" element={<WeaponInfoPage/>}/>
             <Route path="/maps" element={<MapsPage/>}/>
+            <Route path="/tiers" element={<TiersPage/>}/>
+            <Route path="/*" element={<Page404/>}/>
         </Routes>
     )
 }
