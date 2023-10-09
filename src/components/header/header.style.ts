@@ -71,8 +71,7 @@ export const NavigationList = styled.nav`
           cursor: pointer;
           background-color: var(--red-2);
           border-radius: 8px;
-          transform: scale(1.1);
-          border-bottom: 2px solid white;
+          border-bottom: 1px solid white;
         }
       }
     }

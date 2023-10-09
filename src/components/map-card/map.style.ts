@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const MapCardStyle = styled.li`
-  width: 80vw;
   position: relative;
   border-radius: 8px;
   overflow: hidden;
   margin: 16px;
+
 
   &:hover {
     cursor: pointer;
@@ -35,13 +35,17 @@ export const MapCardTopStyle = styled.div`
   }
   .map-plan {
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0px;
     width: 100%;
     height: 100%;
     display: none;
     opacity: 0.7;
     background-color: rgba(0, 0, 0, 0.9);
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 8px;
+    
   }
 `;
 

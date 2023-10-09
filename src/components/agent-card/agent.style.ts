@@ -36,6 +36,7 @@ export const CardStyleTop = styled.div`
   .agent-background {
     width: 100%;
     height: 100%;
+    padding: 0 32px 32px 32px;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -49,8 +50,6 @@ export const CardStyleBottom = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  position: relative;
-  bottom: 0px;
   z-index: 1;
   background-color: var(--red-2);
   color: white;

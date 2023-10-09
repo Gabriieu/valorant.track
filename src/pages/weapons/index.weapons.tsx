@@ -18,6 +18,7 @@ export const WeaponsPage = () => {
   const [filteredWeapons, setFilteredWeapons] = useState<iWeapon[] | []>([]);
   useEffect(() => {
     getWeapons();
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
   }, []);
 
   const filterWeapon = (weaponType: string) => {

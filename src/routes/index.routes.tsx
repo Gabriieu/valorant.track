@@ -12,6 +12,7 @@ export const RoutesMain = () => {
             <Route path="/agents" element={<AgentsPage/>}/>
             <Route path="/agents/:agentId" element={<AgentInfoPage/>}/>
             <Route path="/weapons" element={<WeaponsPage/>}/>
+            <Route path="/weapons/:weaponId" element={<WeaponsPage/>}/>
             <Route path="/maps" element={<MapsPage/>}/>
         </Routes>
     )

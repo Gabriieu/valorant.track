@@ -2,7 +2,7 @@ import styled from "styled-components";
 import valorLogo from "../../assets/valor-logo-black.webp";
 
 export const SectionContainer = styled.section`
-  padding-top: 3rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,13 +29,13 @@ export const SectionContainer = styled.section`
     }
 
     @media (min-width: 1024px) {
-      width: 50vw;
+      width: 30vw;
     }
   }
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 `;
 
@@ -46,14 +46,19 @@ export const SectionContainer2 = styled.section`
   align-items: center;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.8);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-  ul{
+  h1 {
+    font-size: 32px;
+  }
+
+  ul {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-`
+`;
 
 export const AgentInfoCardStyle = styled.div`
   border-radius: 8px;

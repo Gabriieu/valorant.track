@@ -6,7 +6,7 @@ export const SkillCardStyle = styled.li`
   border-radius: 8px;
   padding: 8px;
   width: 70%;
-  margin-top: 3rem;
+  margin: 3rem 0 3rem 0;
 
   div {
     display: flex;
@@ -27,14 +27,17 @@ export const SkillCardStyle = styled.li`
     transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
     p {
       text-align: justify;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
   }
 
   &&:hover {
     cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 3px 3px var(--red-1);
   }
 
-  @media(min-width: 1024px){
+  @media (min-width: 1024px) {
     width: 50%;
   }
 `;
