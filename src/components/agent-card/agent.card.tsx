@@ -1,12 +1,15 @@
 import { iAgent } from "../../provider/types/@agent-types"
 import { CardStyle, CardStyleBottom, CardStyleTop } from "./agent.style"
+import { useNavigate } from "react-router-dom"
 
 interface iAgentProp {
     agent: iAgent
 }
 export const AgentCard = ({agent}: iAgentProp) => {
+    const navigate = useNavigate()
+
     return (
-        <CardStyle>
+        <CardStyle onClick={() => navigate(`/agents/${agent.uuid}`)}>
             <CardStyleTop>
                 <img className="agent" src={agent.fullPortraitV2} alt={agent.displayName} />
                 <img className="agent-background" src={agent.background} alt={agent.displayName} />

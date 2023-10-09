@@ -19,12 +19,15 @@ interface iMainContext {
   getMaps: () => Promise<void>;
   tiers: [] | iTiers[];
   getTiers: () => Promise<void>;
+  agentInfo: iAgent | null;
+  getAgentInfo: (uuid: string) => Promise<void>;
 }
 
 export const MainContext = createContext({} as iMainContext);
 
 export const MainProvider = ({ children }: iMainProviderProps) => {
   const [agents, setAgents] = useState<iAgent[] | []>([]);
+  const [agentInfo, setAgentInfo] = useState<iAgent | null>(null);
   const [weapons, setWeapons] = useState<iWeapon[] | []>([]);
   const [maps, setMaps] = useState<iMap[] | []>([]);
   /* const [buddies, setBuddies] = useState(); */
@@ -46,6 +49,16 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
       } catch (error) {
         toast.error("Houve um erro inesperado ao obter os agentes.");
       }
+    }
+  };
+
+  const getAgentInfo = async (uuid: string) => {
+    //setAgentInfo(null)
+    try {
+      const response = await api.get(`/agents/${uuid}?language=pt-BR`);
+      setAgentInfo(response.data.data);
+    } catch (error) {
+      toast.error("Houve um erro inesperado ao obter o agente.");
     }
   };
 
@@ -75,17 +88,30 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
     if (tiers.length == 0) {
       try {
         const response = await api.get("/competitivetiers?language=pt-BR");
-        const filterResponse = response.data.data[0].tiers.filter((tier: iTier) => tier.smallIcon)
+        const filterResponse = response.data.data[0].tiers.filter(
+          (tier: iTier) => tier.smallIcon
+        );
         setTiers(filterResponse);
       } catch (error) {
         toast.error("Houve um erro ao obter os ranks.");
       }
     }
-    console.log(tiers)
+    console.log(tiers);
   };
   return (
     <MainContext.Provider
-      value={{ agents, getAgents, weapons, getWeapons, maps, getMaps, tiers, getTiers }}
+      value={{
+        agents,
+        getAgents,
+        weapons,
+        getWeapons,
+        maps,
+        getMaps,
+        tiers,
+        getTiers,
+        agentInfo,
+        getAgentInfo,
+      }}
     >
       {children}
     </MainContext.Provider>
