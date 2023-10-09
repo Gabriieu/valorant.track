@@ -5,6 +5,7 @@ import gif2 from "../../assets/gif2.gif"
 export const ContainerTop = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
@@ -14,11 +15,16 @@ export const ContainerTop = styled.div`
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+
+  @media(min-width: 1024px){
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 `;
 
 export const ContainerBottom = styled.div`
   min-height: 100vh;
-  min-width: 100vw;
+  max-width: 100vw;
   color: black;
   padding: 5rem;
   display: flex;
@@ -68,13 +74,13 @@ export const ContainerBottom = styled.div`
   }
 `;
 export const WelcomeComponentStyle = styled.div`
-  margin: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80vw;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 16px;
+  margin-top: 5rem;
   border-radius: 8px;
   max-width: 700px;
 
