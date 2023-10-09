@@ -25,6 +25,7 @@ export const Footer = () => {
           <img id="riot-logo" src={riotLogo} alt="RIOT GAMES" />
         </a>
         <div>
+          <div>
           <a
             href="https://www.linkedin.com/in/jos%C3%A9gabrielsouza/"
             target="_blank"
@@ -34,7 +35,8 @@ export const Footer = () => {
           <a href="https://github.com/Gabriieu" target="_blank">
             <img id="git-logo" src={gitHubLogo} alt="Meu GitHub" />
           </a>
-          <h6>Made with <ImHeart/> by José Gabriel</h6>
+          </div>
+          <h6>Made with <ImHeart color="red"/> by José Gabriel</h6>
         </div>
       </FooterBottomDiv>
     </FooterStyle>

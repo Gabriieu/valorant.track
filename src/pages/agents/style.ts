@@ -46,7 +46,4 @@ export const TitleStyle = styled.div`
   }
 `;
 
-export const GoToTopButtonStyle = styled.button`
-  position: absolute;
-  right: 24px;
-`;
+

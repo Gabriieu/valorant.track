@@ -30,12 +30,8 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
   const [agentInfo, setAgentInfo] = useState<iAgent | null>(null);
   const [weapons, setWeapons] = useState<iWeapon[] | []>([]);
   const [maps, setMaps] = useState<iMap[] | []>([]);
-  /* const [buddies, setBuddies] = useState(); */
   const [tiers, setTiers] = useState<iTiers[] | []>([]);
-  /*   const [cards, setCards] = useState();
-  const [titles, setTitles] = useState();
-  const [sprays, setSprays] = useState();
- */
+
   useEffect(() => {}, []);
 
   const getAgents = async () => {
@@ -53,7 +49,6 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
   };
 
   const getAgentInfo = async (uuid: string) => {
-    //setAgentInfo(null)
     try {
       const response = await api.get(`/agents/${uuid}?language=pt-BR`);
       setAgentInfo(response.data.data);
@@ -98,6 +93,7 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
     }
     console.log(tiers);
   };
+
   return (
     <MainContext.Provider
       value={{

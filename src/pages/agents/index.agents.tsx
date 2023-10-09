@@ -1,16 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { MainContext } from "../../provider/main.provider";
-import {
-  GoToTopButtonStyle,
-  MainStyle,
-  SelectStyle,
-  TitleStyle,
-} from "./style";
+import { MainStyle, SelectStyle, TitleStyle } from "./style";
 import { Header } from "../../components/header";
 import { AgentCard } from "../../components/agent-card/agent.card";
 import { iAgent } from "../../provider/types/@agent-types";
 import { Footer } from "../../components/footer/footer.index";
-import { TfiArrowCircleUp } from "react-icons/tfi";
+import { GoToTop } from "../../components/go-to-top/go-to-top.index";
 
 export const AgentsPage = () => {
   const { getAgents, agents } = useContext(MainContext);
@@ -18,7 +13,7 @@ export const AgentsPage = () => {
 
   useEffect(() => {
     getAgents();
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   const filterAgents = (role: string) => {
@@ -59,13 +54,7 @@ export const AgentsPage = () => {
               ))}
         </ul>
       </MainStyle>
-      <GoToTopButtonStyle
-        onClick={() => {
-          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        }}
-      >
-        <TfiArrowCircleUp color="white" size={48} />
-      </GoToTopButtonStyle>
+      <GoToTop />
       <Footer />
     </>
   );

@@ -57,6 +57,7 @@ export const NavigationList = styled.nav`
   display: none;
 
   li {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 8px;
   }
   @media (min-width: 1024px) {

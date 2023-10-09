@@ -2,16 +2,17 @@ import { Header } from "../../components/header";
 import { useEffect, useContext } from "react";
 import { MainContext } from "../../provider/main.provider";
 import { MapCard } from "../../components/map-card/map.card";
-import { GoToTopButtonStyle, MainStyle, TitleStyle } from "../agents/style";
+import { MainStyle, TitleStyle } from "../agents/style";
 import { UlStyle } from "../weapons/weapons.style";
 import { Footer } from "../../components/footer/footer.index";
-import { TfiArrowCircleUp } from "react-icons/tfi";
+import { GoToTop } from "../../components/go-to-top/go-to-top.index";
+
 export const MapsPage = () => {
   const { getMaps, maps } = useContext(MainContext);
 
   useEffect(() => {
     getMaps();
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   return (
@@ -33,13 +34,7 @@ export const MapsPage = () => {
           })}
         </UlStyle>
       </MainStyle>
-      <GoToTopButtonStyle
-        onClick={() => {
-          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        }}
-      >
-        <TfiArrowCircleUp color="white" size={48} />
-      </GoToTopButtonStyle>
+      <GoToTop />
       <Footer />
     </>
   );

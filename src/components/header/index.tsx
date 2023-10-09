@@ -28,11 +28,7 @@ export const Header = () => {
             <li onClick={() => navigate("/agents")}>AGENTES</li>
             <li onClick={() => navigate("/weapons")}>ARMAS</li>
             <li onClick={() => navigate("/maps")}>MAPAS</li>
-            <li onClick={() => navigate("/buddies")}>CHAVEIROS</li>
             <li onClick={() => navigate("/tiers")}>TIERS</li>
-            <li onClick={() => navigate("/cards")}>CARDS</li>
-            <li onClick={() => navigate("/title")}>TÍTULOS</li>
-            <li onClick={() => navigate("/sprays")}>SPRAYS</li>
           </ul>
         </NavigationList>
         <div>

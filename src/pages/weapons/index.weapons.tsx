@@ -1,24 +1,19 @@
 import { Header } from "../../components/header";
 import { WeaponCard } from "../../components/weapon-card/weapon.card";
 import { MainContext } from "../../provider/main.provider";
-import {
-  GoToTopButtonStyle,
-  MainStyle,
-  SelectStyle,
-  TitleStyle,
-} from "../agents/style";
+import { MainStyle, SelectStyle, TitleStyle } from "../agents/style";
 import { useContext, useEffect, useState } from "react";
 import { UlStyle } from "./weapons.style";
 import { Footer } from "../../components/footer/footer.index";
-import { TfiArrowCircleUp } from "react-icons/tfi";
 import { iWeapon } from "../../provider/types/@weapon-types";
+import { GoToTop } from "../../components/go-to-top/go-to-top.index";
 
 export const WeaponsPage = () => {
   const { weapons, getWeapons } = useContext(MainContext);
   const [filteredWeapons, setFilteredWeapons] = useState<iWeapon[] | []>([]);
   useEffect(() => {
     getWeapons();
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   const filterWeapon = (weaponType: string) => {
@@ -62,18 +57,9 @@ export const WeaponsPage = () => {
             : weapons.map((weapon) => (
                 <WeaponCard weapon={weapon} key={weapon.uuid} />
               ))}
-          {/* {weapons.map((weapon) => {
-            return <WeaponCard weapon={weapon} key={weapon.uuid} />;
-          })} */}
         </UlStyle>
       </MainStyle>
-      <GoToTopButtonStyle
-        onClick={() => {
-          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        }}
-      >
-        <TfiArrowCircleUp color="white" size={48} />
-      </GoToTopButtonStyle>
+      <GoToTop />
       <Footer />
     </>
   );

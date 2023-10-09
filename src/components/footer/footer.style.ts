@@ -5,9 +5,8 @@ export const FooterStyle = styled.footer`
   flex-direction: column;
   align-items: center;
   margin-top: 60px;
-  gap: 32px;
-  background-color: var(--red-1);
-  padding: 48px;
+  background-color: var(--grey--scale--grey-1);
+  padding: 2rem;
 `;
 
 export const FooterTopDiv = styled.div`
@@ -24,13 +23,17 @@ export const FooterBottomDiv = styled.div`
     flex-direction: column;
     align-items: center;
 
-    div{
+    >div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
         a{
             margin: 0 16px 0 16px;
         }
     }
   #riot-logo {
-    height: 150px;
+    height: 100px;
   }
 
   #linkedin-logo{
