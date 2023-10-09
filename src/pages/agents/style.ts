@@ -2,7 +2,7 @@ import styled from "styled-components";
 import backgroundImage from "../../assets/background.jpg";
 
 export const MainStyle = styled.main`
-  max-width: 100vw;
+  min-width: 100vw;
   min-height: 100vh;
   margin-top: 80px;
   display: flex;

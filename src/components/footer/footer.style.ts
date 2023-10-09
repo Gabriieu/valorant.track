@@ -4,7 +4,6 @@ export const FooterStyle = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
   background-color: var(--grey--scale--grey-1);
   padding: 2rem;
 `;
@@ -33,17 +32,14 @@ export const FooterBottomDiv = styled.div`
         }
     }
   #riot-logo {
-    height: 100px;
+    height: 75px;
   }
 
-  #linkedin-logo{
-    height: 40px;
-    width: 40px;
-  }
 
-  #git-logo{
+  #git-logo, #linkedin-logo{
     height: 40px;
     width: 40px;
-    border-radius: 8px;
+    border-radius: 5px;
+    margin-bottom: 12px;
   }
 `;
