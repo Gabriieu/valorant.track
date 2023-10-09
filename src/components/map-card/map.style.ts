@@ -18,7 +18,7 @@ export const MapCardStyle = styled.li`
       transition: all 0.3s ease-in-out;
       box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
     }
-    .map-plan {
+    .map-description {
       display: block;
     }
   }
@@ -33,7 +33,7 @@ export const MapCardTopStyle = styled.div`
   .map-img {
     width: 100%;
   }
-  .map-plan {
+  .map-description {
     position: absolute;
     top: 0;
     left: 0px;
@@ -45,7 +45,13 @@ export const MapCardTopStyle = styled.div`
     text-align: justify;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 8px;
-    
+  }
+
+  .map-plan{
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-height: 100%;
   }
 `;
 
