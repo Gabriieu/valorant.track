@@ -7,6 +7,7 @@ import {
 } from "./weapon.style";
 import currencyIcon from "../../assets/currency-icon.webp";
 import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
 import { UlStyle } from "../../pages/weapons/weapons.style";
 
 interface iWeaponProp {
@@ -16,6 +17,7 @@ interface iWeaponProp {
 export const WeaponCard = ({ weapon }: iWeaponProp) => {
   const navigate = useNavigate();
   const { weaponId } = useParams();
+  const [display, setDisplay] = useState<"hide" | "show">("hide");
 
   const goToWeaponPage = () => {
     if (!weaponId) {
@@ -46,8 +48,11 @@ export const WeaponCard = ({ weapon }: iWeaponProp) => {
           ) : null}
         </WeaponStatsStyle>
       </WeaponCardStyle>
-      {weaponId && (
-        <WeaponDamageStyle>
+      {weaponId && weapon.weaponStats && (
+        <WeaponDamageStyle
+          onMouseEnter={() => setDisplay("show")}
+          onMouseLeave={() => setDisplay("hide")}
+        >
           <h1>DANO</h1>
           <div>
             {weapon.weaponStats.damageRanges[0] && (
@@ -73,6 +78,26 @@ export const WeaponCard = ({ weapon }: iWeaponProp) => {
                 <h2>Pernas: {weapon.weaponStats.damageRanges[1].legDamage}</h2>
               </div>
             )}
+          </div>
+          <div className={display}>
+            <h1>ESTATÍSTICAS</h1>
+            <div>
+              {weapon.weaponStats.adsStats ? (
+                <>
+                  <h2>Zoom: {weapon.weaponStats.adsStats.zoomMultiplier}x</h2>
+                  <h2>
+                    Taxa de disparo: {weapon.weaponStats.adsStats.fireRate.toFixed(2)}{" "}
+                    tiros/segs.
+                  </h2>
+                  <h2>
+                    Multiplicador de corrida:{" "}
+                    {weapon.weaponStats.adsStats.runSpeedMultiplier}x
+                  </h2>
+                </>
+              ) : (
+                <h2>Não há dados disponíveis para a {weapon.displayName}</h2>
+              )}
+            </div>
           </div>
         </WeaponDamageStyle>
       )}

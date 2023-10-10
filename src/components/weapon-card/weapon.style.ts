@@ -55,12 +55,33 @@ export const WeaponDamageStyle = styled.li`
   align-items: center;
   justify-content: space-around;
   height: 250px;
+  min-width: 300px;
   margin: 32px 12px 32px 12px;
   padding: 16px;
-      background-color: var(--grey--scale--grey-1);
+  background-color: var(--grey--scale--grey-1);
+  position: relative;
 
-  > h1 {
+  .show {
+    position: absolute;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    padding: 16px;
+    background-color: var(--grey--scale--grey-1);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  h1 {
     color: var(--red-1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
   > div {
