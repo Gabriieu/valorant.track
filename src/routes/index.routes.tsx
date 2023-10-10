@@ -5,7 +5,6 @@ import { MapsPage } from "../pages/maps/index.maps"
 import { HomePage } from "../pages/home/index.home"
 import { AgentInfoPage } from "../pages/agent-page/index.agent"
 import { WeaponInfoPage } from "../pages/weapon-page/index.weapon"
-import { TiersPage } from "../pages/tiers/index.tiers"
 import { Page404 } from "../pages/404/index.404"
 
 export const RoutesMain = () => {

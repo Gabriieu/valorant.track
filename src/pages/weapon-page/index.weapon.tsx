@@ -1,6 +1,6 @@
 import { Footer } from "../../components/footer/footer.index";
 import { Header } from "../../components/header";
-import { iSkin, iWeapon } from "../../provider/types/@weapon-types";
+import { iWeapon } from "../../provider/types/@weapon-types";
 import { MainStyle } from "../agents/style";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";

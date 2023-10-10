@@ -1,28 +1,15 @@
-import { Footer } from "../../components/footer/footer.index"
-import { GoToTop } from "../../components/go-to-top/go-to-top.index"
-import { Header } from "../../components/header"
-import { MainContext } from "../../provider/main.provider"
-import { MainStyle } from "../agents/style"
-import {useEffect, useContext} from "react"
-import { UlStyle } from "../weapons/weapons.style"
+import { Footer } from "../../components/footer/footer.index";
+import { GoToTop } from "../../components/go-to-top/go-to-top.index";
+import { Header } from "../../components/header";
+import { MainStyle } from "../agents/style";
 
 export const TiersPage = () => {
-    const {tiers, getTiers} = useContext(MainContext)
-
-    useEffect(() => {
-        getTiers()
-    })
-    return(
-        <>
-        <Header/>
-        <MainStyle>
-            <h1>{`< EM DESENVOLVIMENTO />`}</h1>
-            <UlStyle>
-                {tiers.map(tier => <li>{tier.tierName}</li>)}
-            </UlStyle>
-        </MainStyle>
-        <Footer/>
-        <GoToTop/>
-        </>
-    )
-}
+  return (
+    <>
+      <Header />
+      <MainStyle></MainStyle>
+      <Footer />
+      <GoToTop />
+    </>
+  );
+};
