@@ -17,7 +17,6 @@ export const RoutesMain = () => {
             <Route path="/weapons" element={<WeaponsPage/>}/>
             <Route path="/weapons/:weaponId" element={<WeaponInfoPage/>}/>
             <Route path="/maps" element={<MapsPage/>}/>
-            <Route path="/tiers" element={<TiersPage/>}/>
             <Route path="/*" element={<Page404/>}/>
         </Routes>
     )

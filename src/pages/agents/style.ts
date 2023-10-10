@@ -9,7 +9,7 @@ export const MainStyle = styled.main`
   flex-direction: column;
   align-items: center;
   background-image: url(${backgroundImage});
-  background-repeat: no-repeat;
+  //background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;

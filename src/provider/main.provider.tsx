@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 import { iAgent } from "./types/@agent-types";
 import { iWeapon } from "./types/@weapon-types";
 import { iMap } from "./types/@maps-types";
-import { iTier, iTiers } from "./types/@tier-types";
 
 interface iMainProviderProps {
   children: React.ReactNode;
@@ -17,8 +16,6 @@ interface iMainContext {
   getWeapons: () => Promise<void>;
   maps: [] | iMap[];
   getMaps: () => Promise<void>;
-  tiers: [] | iTiers[];
-  getTiers: () => Promise<void>;
   agentInfo: iAgent | null;
   getAgentInfo: (uuid: string) => Promise<void>;
 }
@@ -30,7 +27,6 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
   const [agentInfo, setAgentInfo] = useState<iAgent | null>(null);
   const [weapons, setWeapons] = useState<iWeapon[] | []>([]);
   const [maps, setMaps] = useState<iMap[] | []>([]);
-  const [tiers, setTiers] = useState<iTiers[] | []>([]);
 
   useEffect(() => {}, []);
 
@@ -79,20 +75,6 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
     }
   };
 
-  const getTiers = async () => {
-    if (tiers.length == 0) {
-      try {
-        const response = await api.get("/competitivetiers?language=pt-BR");
-        const filterResponse = response.data.data[0].tiers.filter(
-          (tier: iTier) => tier.smallIcon
-        );
-        setTiers(filterResponse);
-      } catch (error) {
-        toast.error("Houve um erro ao obter os ranks.");
-      }
-    }
-    console.log(tiers);
-  };
 
   return (
     <MainContext.Provider
@@ -103,8 +85,6 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
         getWeapons,
         maps,
         getMaps,
-        tiers,
-        getTiers,
         agentInfo,
         getAgentInfo,
       }}

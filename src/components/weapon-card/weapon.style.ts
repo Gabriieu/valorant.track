@@ -45,3 +45,39 @@ export const CurrencyStyle = styled.img`
   width: 16px;
   height: 16px;
 `;
+
+export const WeaponDamageStyle = styled.li`
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 250px;
+  margin: 32px 12px 32px 12px;
+  padding: 16px;
+      background-color: var(--grey--scale--grey-1);
+
+  > h1 {
+    color: var(--red-1);
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      width: max-content;
+    }
+  }
+`;

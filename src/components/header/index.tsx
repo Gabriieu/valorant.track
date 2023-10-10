@@ -2,7 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiClose } from "react-icons/tfi";
-import { DropDownMenu, HeaderStyle, LogoStyle, NavigationList } from "./header.style";
+import {
+  DropDownMenu,
+  HeaderStyle,
+  LogoStyle,
+  NavigationList,
+} from "./header.style";
 
 export const Header = () => {
   const [hambMenuStatus, setHambMenuStatus] = useState(true);
@@ -28,7 +33,6 @@ export const Header = () => {
             <li onClick={() => navigate("/agents")}>AGENTES</li>
             <li onClick={() => navigate("/weapons")}>ARMAS</li>
             <li onClick={() => navigate("/maps")}>MAPAS</li>
-            <li onClick={() => navigate("/tiers")}>TIERS</li>
           </ul>
         </NavigationList>
         <div>
@@ -54,21 +58,6 @@ export const Header = () => {
             </li>
             <li onClick={() => navigate("/maps")}>
               <a href="">MAPAS</a>
-            </li>
-            <li onClick={() => navigate("/buddies")}>
-              <a href="">CHAVEIROS</a>
-            </li>
-            <li onClick={() => navigate("/tiers")}>
-              <a href="">TIERS</a>
-            </li>
-            <li onClick={() => navigate("/cards")}>
-              <a href="">CARDS</a>
-            </li>
-            <li onClick={() => navigate("/titles")}>
-              <a href="">TÍTULOS</a>
-            </li>
-            <li onClick={() => navigate("/sprays")}>
-              <a href="">SPRAYS</a>
             </li>
           </ul>
         </DropDownMenu>

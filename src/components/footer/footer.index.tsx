@@ -2,7 +2,6 @@ import riotLogo from "../../assets/LOL_CMS_317_Tile_01-Feature_H50-V50-min_bz7wa
 import linkedInLogo from "../../assets/logotipo-quadrado-do-linkedin-isolado-no-fundo-branco_469489-892.png";
 import gitHubLogo from "../../assets/github-logo-2E3852456C-seeklogo.com.png";
 import { FooterBottomDiv, FooterStyle, FooterTopDiv } from "./footer.style";
-import {ImHeart} from "react-icons/im"
 
 export const Footer = () => {
   return (
@@ -36,7 +35,7 @@ export const Footer = () => {
             <img id="git-logo" src={gitHubLogo} alt="Meu GitHub" />
           </a>
           </div>
-          <h6>Made with <ImHeart color="red"/> by José Gabriel</h6>
+          {/* <h6>Made with <ImHeart color="red"/> by José Gabriel</h6> */}
         </div>
       </FooterBottomDiv>
     </FooterStyle>
