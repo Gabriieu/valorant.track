@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import gif from "../../assets/gif.gif";
-import gif2 from "../../assets/gif2.gif"
+import gif2 from "../../assets/gif2.gif";
 
 export const ContainerTop = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
@@ -16,7 +16,7 @@ export const ContainerTop = styled.div`
   background-size: cover;
   background-position: center;
 
-  @media(min-width: 1024px){
+  @media (min-width: 1024px) {
     flex-direction: row;
     justify-content: space-evenly;
   }
@@ -24,9 +24,7 @@ export const ContainerTop = styled.div`
 
 export const ContainerBottom = styled.div`
   min-height: 100vh;
-  max-width: 100vw;
-  color: black;
-  padding: 5rem;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -38,8 +36,9 @@ export const ContainerBottom = styled.div`
   background-size: cover;
   background-position: center;
   color: white;
+  background-color: red;
 
-  div {
+  > div {
     margin: 3rem 0 0 0;
     width: 100%;
   }
@@ -47,6 +46,7 @@ export const ContainerBottom = styled.div`
     background-color: rgba(0, 0, 0, 0.9);
     padding: 2rem;
     border-radius: 8px;
+    margin: 1rem;
   }
   .title {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -73,6 +73,7 @@ export const ContainerBottom = styled.div`
     }
   }
 `;
+
 export const WelcomeComponentStyle = styled.div`
   display: flex;
   flex-direction: column;

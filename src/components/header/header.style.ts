@@ -36,10 +36,12 @@ export const DropDownMenu = styled.div`
   z-index: 2;
 
   ul {
+    padding: 1rem;
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
     li {
       font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -57,7 +59,7 @@ export const NavigationList = styled.nav`
   display: none;
 
   li {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     padding: 8px;
   }
   @media (min-width: 1024px) {
@@ -72,7 +74,7 @@ export const NavigationList = styled.nav`
           cursor: pointer;
           background-color: var(--red-2);
           border-radius: 8px;
-          border-bottom: 1px solid white;
+          text-decoration: underline;
         }
       }
     }
