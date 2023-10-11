@@ -6,6 +6,7 @@ import { HomePage } from "../pages/home/index.home"
 import { AgentInfoPage } from "../pages/agent-page/index.agent"
 import { WeaponInfoPage } from "../pages/weapon-page/index.weapon"
 import { Page404 } from "../pages/404/index.404"
+import { BuddiesPage } from "../pages/buddies/index.buddies"
 
 export const RoutesMain = () => {
     return (
@@ -16,6 +17,7 @@ export const RoutesMain = () => {
             <Route path="/weapons" element={<WeaponsPage/>}/>
             <Route path="/weapons/:weaponId" element={<WeaponInfoPage/>}/>
             <Route path="/maps" element={<MapsPage/>}/>
+            <Route path="/buddies" element={<BuddiesPage/>}/>
             <Route path="/*" element={<Page404/>}/>
         </Routes>
     )

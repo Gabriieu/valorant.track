@@ -33,6 +33,7 @@ export const Header = () => {
             <li onClick={() => navigate("/agents")}>AGENTES</li>
             <li onClick={() => navigate("/weapons")}>ARMAS</li>
             <li onClick={() => navigate("/maps")}>MAPAS</li>
+            <li onClick={() => navigate("/buddies")}>CHAVEIROS</li>
           </ul>
         </NavigationList>
         <div>
@@ -58,6 +59,9 @@ export const Header = () => {
             </li>
             <li onClick={() => navigate("/maps")}>
               <a href="">MAPAS</a>
+            </li>
+            <li onClick={() => navigate("/buddies")}>
+              <a href="">CHAVEIROS</a>
             </li>
           </ul>
         </DropDownMenu>

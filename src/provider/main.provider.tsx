@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { iAgent } from "./types/@agent-types";
 import { iWeapon } from "./types/@weapon-types";
 import { iMap } from "./types/@maps-types";
+import { iBuddie } from "./types/@buddie-types";
 
 interface iMainProviderProps {
   children: React.ReactNode;
@@ -18,6 +19,8 @@ interface iMainContext {
   getMaps: () => Promise<void>;
   agentInfo: iAgent | null;
   getAgentInfo: (uuid: string) => Promise<void>;
+  buddies: [] | iBuddie[];
+  getBuddies: () => Promise<void>;
 }
 
 export const MainContext = createContext({} as iMainContext);
@@ -27,6 +30,7 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
   const [agentInfo, setAgentInfo] = useState<iAgent | null>(null);
   const [weapons, setWeapons] = useState<iWeapon[] | []>([]);
   const [maps, setMaps] = useState<iMap[] | []>([]);
+  const [buddies, setBuddies] = useState<iBuddie[] | []>([]);
 
   useEffect(() => {}, []);
 
@@ -75,7 +79,14 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
     }
   };
 
-
+  const getBuddies = async () => {
+    try {
+      const response = await api.get("/buddies/levels");
+      setBuddies(response.data.data);
+    } catch (error) {
+      toast.error("Houve um erro inesperado ao obter os chaveiros.");
+    }
+  };
   return (
     <MainContext.Provider
       value={{
@@ -87,6 +98,8 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
         getMaps,
         agentInfo,
         getAgentInfo,
+        buddies,
+        getBuddies,
       }}
     >
       {children}
