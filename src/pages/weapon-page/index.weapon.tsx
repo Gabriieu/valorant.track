@@ -1,6 +1,6 @@
 import { Footer } from "../../components/footer/footer.index";
 import { Header } from "../../components/header";
-import { iWeapon } from "../../provider/types/@weapon-types";
+import { iSkin, iWeapon } from "../../provider/types/@weapon-types";
 import { MainStyle } from "../agents/style";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -17,7 +17,7 @@ export const WeaponInfoPage = () => {
 
   const getWeaponInfo = async (uuid: string) => {
     try {
-      const response = await api.get(`/weapons/${uuid}?language=pt-BR`);
+      let response = await api.get(`/weapons/${uuid}?language=pt-BR`);
       setWeaponInfo(response.data.data);
     } catch (error) {
       toast.error("Arma não encontrada");
@@ -26,7 +26,7 @@ export const WeaponInfoPage = () => {
 
   useEffect(() => {
     getWeaponInfo(weaponId!);
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    ///window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   return (

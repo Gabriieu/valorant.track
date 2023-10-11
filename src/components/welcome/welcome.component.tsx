@@ -24,7 +24,7 @@ export const WelcomeComponent = () => {
           <div>
             <p>
               Aqui você pode consultar os itens do Valorant, incluindo detalhes
-              sobre os agentes, armas, mapas, skins, e muito mais. Explore todas
+              sobre os agentes, habilidades, armas, skins e mapas. Explore todas
               as informações que você precisa para se tornar um jogador de
               Valorant ainda mais experiente e bem informado.
             </p>

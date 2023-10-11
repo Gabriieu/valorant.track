@@ -60,9 +60,9 @@ export const WeaponCard = ({ weapon }: iWeaponProp) => {
                 <h1>
                   Até {weapon.weaponStats.damageRanges[0].rangeEndMeters} m
                 </h1>
-                <h2>Cabeça: {weapon.weaponStats.damageRanges[0].headDamage}</h2>
-                <h2>Corpo: {weapon.weaponStats.damageRanges[0].bodyDamage}</h2>
-                <h2>Pernas: {weapon.weaponStats.damageRanges[0].legDamage}</h2>
+                <h2>Cabeça: {weapon.weaponStats.damageRanges[0].headDamage.toFixed(2)}</h2>
+                <h2>Corpo: {weapon.weaponStats.damageRanges[0].bodyDamage.toFixed(2)}</h2>
+                <h2>Pernas: {weapon.weaponStats.damageRanges[0].legDamage.toFixed(2)}</h2>
               </div>
             )}
             {weapon.weaponStats.damageRanges[1] && (
@@ -72,10 +72,10 @@ export const WeaponCard = ({ weapon }: iWeaponProp) => {
                 </h1>
                 <h2>
                   Cabeça:{" "}
-                  {weapon.weaponStats.damageRanges[1].headDamage || null}
+                  {weapon.weaponStats.damageRanges[1].headDamage.toFixed(2) || null}
                 </h2>
-                <h2>Corpo: {weapon.weaponStats.damageRanges[1].bodyDamage}</h2>
-                <h2>Pernas: {weapon.weaponStats.damageRanges[1].legDamage}</h2>
+                <h2>Corpo: {weapon.weaponStats.damageRanges[1].bodyDamage.toFixed(2)}</h2>
+                <h2>Pernas: {weapon.weaponStats.damageRanges[1].legDamage.toFixed(2)}</h2>
               </div>
             )}
           </div>
