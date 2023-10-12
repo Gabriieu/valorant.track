@@ -12,12 +12,12 @@ export const RoutesMain = () => {
     return (
         <Routes>
             <Route path="/" element={<HomePage/>}/>
-            <Route path="/agents" element={<AgentsPage/>}/>
-            <Route path="/agents/:agentId" element={<AgentInfoPage/>}/>
-            <Route path="/weapons" element={<WeaponsPage/>}/>
-            <Route path="/weapons/:weaponId" element={<WeaponInfoPage/>}/>
-            <Route path="/maps" element={<MapsPage/>}/>
-            <Route path="/buddies" element={<BuddiesPage/>}/>
+            <Route path="/agentes" element={<AgentsPage/>}/>
+            <Route path="/agentes/:agentId" element={<AgentInfoPage/>}/>
+            <Route path="/armas" element={<WeaponsPage/>}/>
+            <Route path="/armas/:weaponId" element={<WeaponInfoPage/>}/>
+            <Route path="/mapas" element={<MapsPage/>}/>
+            <Route path="/chaveiros" element={<BuddiesPage/>}/>
             <Route path="/*" element={<Page404/>}/>
         </Routes>
     )

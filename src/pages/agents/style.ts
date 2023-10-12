@@ -9,7 +9,7 @@ export const MainStyle = styled.main`
   flex-direction: column;
   align-items: center;
   background-image: url(${backgroundImage});
-  //background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -38,7 +38,10 @@ export const TitleStyle = styled.div`
   align-items: center;
   gap: 24px;
   margin: 24px;
-
+  font-size: 24px;
+  background-color: rgba(0,0,0, .5);
+  padding: 8px;
+  border-radius: 8px;
   p {
     text-align: center;
     color: var(--grey--scale--grey-5);

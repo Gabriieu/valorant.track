@@ -21,7 +21,7 @@ export const WeaponCard = ({ weapon }: iWeaponProp) => {
 
   const goToWeaponPage = () => {
     if (!weaponId) {
-      navigate(`/weapons/${weapon.uuid}`);
+      navigate(`/armas/${weapon.uuid}`);
     }
   };
 

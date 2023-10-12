@@ -30,10 +30,10 @@ export const Header = () => {
         <NavigationList>
           <ul>
             <li onClick={() => navigate("/")}>HOME</li>
-            <li onClick={() => navigate("/agents")}>AGENTES</li>
-            <li onClick={() => navigate("/weapons")}>ARMAS</li>
-            <li onClick={() => navigate("/maps")}>MAPAS</li>
-            <li onClick={() => navigate("/buddies")}>CHAVEIROS</li>
+            <li onClick={() => navigate("/agentes")}>AGENTES</li>
+            <li onClick={() => navigate("/armas")}>ARMAS</li>
+            <li onClick={() => navigate("/mapas")}>MAPAS</li>
+            <li onClick={() => navigate("/chaveiros")}>CHAVEIROS</li>
           </ul>
         </NavigationList>
         <div>
@@ -51,16 +51,16 @@ export const Header = () => {
             <li onClick={() => navigate("/")}>
               <a href="">HOME</a>
             </li>
-            <li onClick={() => navigate("/agents")}>
+            <li onClick={() => navigate("/agentes")}>
               <a href="">AGENTES</a>
             </li>
-            <li onClick={() => navigate("/weapons")}>
+            <li onClick={() => navigate("/armas")}>
               <a href="">ARMAS</a>
             </li>
-            <li onClick={() => navigate("/maps")}>
+            <li onClick={() => navigate("/mapas")}>
               <a href="">MAPAS</a>
             </li>
-            <li onClick={() => navigate("/buddies")}>
+            <li onClick={() => navigate("/chaveiros")}>
               <a href="">CHAVEIROS</a>
             </li>
           </ul>

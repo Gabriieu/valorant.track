@@ -11,8 +11,8 @@ interface iMainProviderProps {
 }
 
 interface iMainContext {
-  getAgents: () => Promise<void>;
   agents: [] | iAgent[];
+  getAgents: () => Promise<void>;
   weapons: [] | iWeapon[];
   getWeapons: () => Promise<void>;
   maps: [] | iMap[];
@@ -81,12 +81,13 @@ export const MainProvider = ({ children }: iMainProviderProps) => {
 
   const getBuddies = async () => {
     try {
-      const response = await api.get("/buddies/levels");
+      const response = await api.get("/buddies/levels?language=pt-BR");
       setBuddies(response.data.data);
     } catch (error) {
       toast.error("Houve um erro inesperado ao obter os chaveiros.");
     }
   };
+
   return (
     <MainContext.Provider
       value={{
